@@ -31,4 +31,4 @@ else
     fi
 fi
 
-exec dotnet VintagestoryServer.dll --dataPath /srv/gameserver/data/vs
+./server.sh start && screen -wipe && tail -f /dev/null

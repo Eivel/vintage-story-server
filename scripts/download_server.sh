@@ -20,7 +20,7 @@ else
     exit 1
 fi
 
-wget -q "$DOWNLOAD_URL"
+wget "$DOWNLOAD_URL"
 tar xzf vs_server_linux-x64_${VERSION}.tar.gz
 rm vs_server_linux-x64_${VERSION}.tar.gz
 
