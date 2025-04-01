@@ -7,7 +7,7 @@ ENV UNSTABLE_URL="https://cdn.vintagestory.at/gamefiles/unstable/vs_server_linux
 
 # Install required packages
 RUN apt-get update && apt-get install -y \
-    wget jq \
+    wget jq pgrep\
     && rm -rf /var/lib/apt/lists/*
 
 # Create non-root user and group with specific IDs
@@ -17,8 +17,8 @@ RUN useradd -u 1000 -m -s /bin/bash gameserver
 RUN mkdir -p /srv/gameserver/vintagestory \
     /srv/gameserver/data/vs
 
-# Set ownership 
-RUN chown -R gameserver:gameserver /srv/gameserver 
+# Set ownership
+RUN chown -R gameserver:gameserver /srv/gameserver
 
 WORKDIR /srv/gameserver/vintagestory
 
